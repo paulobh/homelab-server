@@ -69,8 +69,13 @@ We also will make a "Fast" pool which is used for virtual machine and container 
 To do this, on the Proxmox sidebar for your datacenter, go to Disks -> ZFS -> Create: ZFS. 
 This will pop up the screen to create a ZFS pool.
 
-From this screen, it should show all of your drives, so select the ones you want in your pool, and select your RAID level (in my case RAIDZ for my vault pool and mirror for my flash pool) and compression, (in my case lz4). 
+From this screen, it should show all of your drives, so select the ones you want in your pool, and select your RAID level (in my case **RAIDZ** for my vault pool and mirror for my flash pool) and compression, (in my case lz4). 
 Make sure you check the box that says **Add to Storage**. 
 This will make the pools immiatily avalible and will prevent using `.raw` files as obsosed to my previous setup when I added directorties. 
 
+```
+zpool list
+zfs list
+```
+[RAID-and-RAIDZ](https://www.45drives.com/community/articles/RAID-and-RAIDZ/)
  
