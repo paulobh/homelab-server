@@ -41,7 +41,6 @@ resize2fs /dev/mapper/pve-root
 ```
 3. Check to ensure your local storage partition is using all avalible space. Reassign storage for containers and VM if needed.
 
-
 #### Ensure IOMMU is enabled
 Enable IOMMU on in grub configuration
 ```
@@ -61,4 +60,17 @@ dmesg | grep -e DMAR -e IOMMU
 dmesg | grep 'remapping'
 ```
 Learn about enabling PCI Passthrough [here](https://pve.proxmox.com/wiki/PCI_Passthrough)
+
+
+### 2. Create ZFS Pools
+
+First, we are going to setup two ZFS Pools. A "Tank" pool which is used for larger stored data sets such as media, images and archives. 
+We also will make a "Fast" pool which is used for virtual machine and container root file systems. 
+To do this, on the Proxmox sidebar for your datacenter, go to Disks -> ZFS -> Create: ZFS. 
+This will pop up the screen to create a ZFS pool.
+
+From this screen, it should show all of your drives, so select the ones you want in your pool, and select your RAID level (in my case RAIDZ for my vault pool and mirror for my flash pool) and compression, (in my case lz4). 
+Make sure you check the box that says **Add to Storage**. 
+This will make the pools immiatily avalible and will prevent using `.raw` files as obsosed to my previous setup when I added directorties. 
+
  
