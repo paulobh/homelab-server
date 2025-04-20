@@ -95,3 +95,89 @@ Under network we will leave most everything, but I like to give it a static IP h
 
 Now that our container is created I want to add some storage and mount the data and docker directories on my system. Click on your newly created LXC and then click on Resources. From there click the Add button and select mount point. The first one I'll add is going to be for the bulk file storage or I will change the option under storage to tank. For path I will set this to /data and uncheck backup. We will set up backups later. I want to dedicate a ton of room to this so I 26078 GiB (28 TB). Set this to what works best your how much media you'd like to store there. I keep everything else as is and click create. For the docker mount I repeated all these steps, but set the storage to flash, mount point to /docker, and gave it about 128gb of space.
  
+
+### 5. Creating SMB Shares
+
+In our new LXC we first need to run some general updates and user creation.
+
+1. Update your system
+```
+sudo apt update && sudo apt upgrade -y
+```
+2. Create your user
+```
+adduser paulo
+adduser paulo sudo
+```
+
+Great video resource by KeepItTechie: [https://www.youtube.com/watch?v=2gW4rWhurUs](https://www.youtube.com/watch?v=2gW4rWhurUs)
+[source](https://gist.github.com/pjobson/3811b73740a3a09597511c18be845a6c)
+
+3. Set permissions of mount points created eariler.
+```
+sudo chown -R paulo:paulo /data
+sudo chown -R paulo:paulo /docker
+```
+4. Install Samba
+```
+sudo apt install samba
+```
+5. Create a backup of the default configuration
+```
+cd /etc/samba
+sudo mv smb.conf smb.conf.old
+```
+6. Edit the samba config
+```
+sudo nano smb.conf
+```
+This is my configuration
+```
+[global]
+   server string = Servarr
+   workgroup = WORKGROUP
+   security = user
+   map to guest = Bad User
+   name resolve order = bcast host
+   hosts allow = 10.0.0.0/24
+   hosts deny = 0.0.0.0/0
+[data]
+   path = /data
+   force user = brandon
+   force group = brandon
+   create mask = 0774
+   force create mode = 0774
+   directory mask = 0775
+   force directory mode = 0775
+   browseable = yes
+   writable = yes
+   read only = no
+   guest ok = no
+[docker]
+   path = /docker
+   force user = brandon
+   force group = brandon
+   create mask = 0774
+   force create mode = 0774
+   directory mask = 0775
+   force directory mode = 0775
+   browseable = yes
+   writable = yes
+   read only = no
+   guest ok = no
+```
+7. Add your samba user
+```
+sudo smbpasswd -a [username]
+```
+8. Set services to auto start on reboot
+```
+sudo systemctl enable smbd
+sudo systemctl enable nmbd
+sudo systemctl restart smbd
+sudo systemctl restart nmbd
+```
+9. Allow samba on firewall if you run into any issues.
+```
+sudo ufw allow Samba
+```
