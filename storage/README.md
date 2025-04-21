@@ -164,12 +164,12 @@ This is my configuration
    security = user
    map to guest = Bad User
    name resolve order = bcast host
-   hosts allow = 10.0.0.0/24
+   hosts allow = 192.168.1.1/24
    hosts deny = 0.0.0.0/0
 [data]
    path = /data
-   force user = brandon
-   force group = brandon
+   force user = paulo
+   force group = paulo
    create mask = 0774
    force create mode = 0774
    directory mask = 0775
@@ -180,8 +180,8 @@ This is my configuration
    guest ok = no
 [docker]
    path = /docker
-   force user = brandon
-   force group = brandon
+   force user = paulo
+   force group = paulo
    create mask = 0774
    force create mode = 0774
    directory mask = 0775
