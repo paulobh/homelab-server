@@ -109,7 +109,16 @@ Keep DNS as is and confirm the installation.
 
 ### 4. Adding Mount Points
 
-Now that our container is created I want to add some storage and mount the data and docker directories on my system. Click on your newly created LXC and then click on Resources. From there click the Add button and select mount point. The first one I'll add is going to be for the bulk file storage or I will change the option under storage to tank. For path I will set this to /data and uncheck backup. We will set up backups later. I want to dedicate a ton of room to this so I 26078 GiB (28 TB). Set this to what works best your how much media you'd like to store there. I keep everything else as is and click create. For the docker mount I repeated all these steps, but set the storage to flash, mount point to /docker, and gave it about 128gb of space.
+Now that our container is created I want to add some storage and mount the data and docker directories on my system. 
+Click on your newly created LXC and then click on Resources. 
+From there click the Add button and select mount point. 
+The first one I'll add is going to be for the bulk file storage or I will change the option under storage to tank. 
+For path I will set this to `/data` and uncheck backup. 
+We will set up backups later. 
+I want to dedicate a ton of room to this, but initially I will give 8000 GiB (8 TB). 
+Set this to what works best your how much media you'd like to store there. 
+I keep everything else as is and click create. 
+For the docker mount I repeated all these steps, but set the storage to flash, mount point to `/docker`, and gave it initially about 32gb of space.
  
 
 ### 5. Creating SMB Shares
