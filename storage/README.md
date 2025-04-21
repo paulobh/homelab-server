@@ -85,11 +85,27 @@ zfs list
 
 ### 3. Creating Containers using ZFS Pools
 
-Now time to put these new storage pools in use. For this, we are going to create our first LXC. In this example the LXC is going to be in charge of managing our media server. First we need a operating system image. Click on your local storage in the sidebar and click on CT Templates then the Templates button. From there search for Ubuntu and download the ubuntu-22.04-standard template.
+Now time to put these new storage pools in use. For this, we are going to create our first LXC. 
+In this example the LXC is going to be in charge of managing our media server. 
+First we need a operating system image. 
+Click on your local storage in the sidebar and click on CT Templates then the Templates button. 
+From there search for Ubuntu and download the ubuntu-22.04-standard template (I'm using the 24.04).
 
-Now in the top right click on Create CT. The "Create: LXC Container" prompt should show up. On the general tab I set my CT ID to 100 (later I will match this to a local IP for organization) and I set the hostname to "servarr", you can name it anything like media, jellyfin, or whatever. Set your password, keep the container and unpriviledged and click Next. Select your downloaded Ubuntu template and click next. Under disk you can select your storage location. If you created the flash pool like we did eariler select it, otherwise local is fine. For storage I picked 64gb as my media server is quite large. Click next as we will add the data and docker directory later. Give it as many CPU cores and ram as you need, for my setup I gave it 6 cores and 8gb of memory.
+Now in the top right click on Create CT. 
+The "Create: LXC Container" prompt should show up. 
+On the general tab I set my CT ID to 100 (later I will match this to a local IP for organization) and I set the hostname to "media", you can name it anything like media, jellyfin, or whatever. 
+Set your password, keep the container and unpriviledged and click Next. 
+Select your downloaded Ubuntu template and click next. 
+Under disk you can select your storage location. 
+If you created the flash pool like we did eariler select it, otherwise local is fine. 
+For storage I picked 64gb as my media server is quite large. 
+Click next as we will add the data and docker directory later. 
+Give it as many CPU cores and ram as you need, for my setup I gave it 4 cores and 4gb of memory (+1gb SWAP).
 
-Under network we will leave most everything, but I like to give it a static IP here. If you want to manage this with your router select DHCP. Under IPv4 I set the IPv4/CIDR to `10.0.0.100/24' and the gateway to `10.0.0.1` your local IP may be different. Keep DNS as is and confirm the installation. 
+Under network we will leave most everything, but I like to give it a static IP here. 
+If you want to manage this with your router select DHCP.
+Under IPv4 I set the IPv4/CIDR to `192.168.1.100/24` and the gateway to `192.168.1.1` your local IP may be different. 
+Keep DNS as is and confirm the installation. 
 
 ### 4. Adding Mount Points
 
