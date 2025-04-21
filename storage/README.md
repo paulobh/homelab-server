@@ -206,3 +206,7 @@ sudo systemctl restart nmbd
 ```
 sudo ufw allow Samba
 ```
+10. Enable discoverability on Windows network
+```
+sudo apt install wsdd
+```
