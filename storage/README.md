@@ -147,6 +147,8 @@ sudo chown -R paulo:paulo /docker
 ```
 sudo apt install samba
 ```
+Great reference [Share Folders using Samba in Home Network](https://forums.linuxmint.com/viewtopic.php?t=423409)
+
 5. Create a backup of the default configuration
 ```
 cd /etc/samba
@@ -210,4 +212,5 @@ sudo ufw status
 10. Enable discoverability on Windows network
 ```
 sudo apt install wsdd
+sudo apt install wsdd-server
 ```
