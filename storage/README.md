@@ -210,7 +210,17 @@ sudo ufw allow Samba
 sudo ufw status
 ```
 10. Enable discoverability on Windows network
+
+WSDD has been split into two components
+
+To make it "discoverable" ( Explorer > Network > Server ) and accessible ( Explorer > Network > Server > Share ) to Windows 7 and Up:
+Install `wsdd-server`, this one does create a service.
+
+`wsdd` itself which is used by gvfs to discover wsd enabled servers in the network. It does not operate via a service.
+
+Note: The new `wsdd-server` package also installs the `wsdd` package itself which is used by the new `gvfsd-wsdd` backend enabling you to "discover" Windows machines in your network automatically in your Linux file manager.
+
 ```
-sudo apt install wsdd
+# sudo apt install wsdd
 sudo apt install wsdd-server
 ```
