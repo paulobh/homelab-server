@@ -147,6 +147,7 @@ sudo chown -R paulo:paulo /docker
 ```
 sudo apt install samba
 ```
+
 Great reference [Share Folders using Samba in Home Network](https://forums.linuxmint.com/viewtopic.php?t=423409)
 
 5. Create a backup of the default configuration
@@ -154,6 +155,7 @@ Great reference [Share Folders using Samba in Home Network](https://forums.linux
 cd /etc/samba
 sudo mv smb.conf smb.conf.old
 ```
+
 6. Edit the samba config
 ```
 sudo nano smb.conf
@@ -193,10 +195,12 @@ This is my configuration
    read only = no
    guest ok = no
 ```
+
 7. Add your samba user
 ```
 sudo smbpasswd -a [username]
 ```
+
 8. Set services to auto start on reboot
 ```
 sudo systemctl enable smbd
@@ -204,19 +208,19 @@ sudo systemctl enable nmbd
 sudo systemctl restart smbd
 sudo systemctl restart nmbd
 ```
+
 9. Allow samba on firewall if you run into any issues.
 ```
 sudo ufw allow Samba
 sudo ufw status
 ```
+
 10. Enable discoverability on Windows network
 
-WSDD has been split into two components
-
-To make it "discoverable" ( Explorer > Network > Server ) and accessible ( Explorer > Network > Server > Share ) to Windows 7 and Up:
-Install `wsdd-server`, this one does create a service.
-
-`wsdd` itself which is used by gvfs to discover wsd enabled servers in the network. It does not operate via a service.
+- WSDD has been split into two components
+  - To make it "discoverable" ( Explorer > Network > Server ) and accessible ( Explorer > Network > Server > Share ) to Windows 7 and Up:
+    Install `wsdd-server`, this one does create a service.
+  - `wsdd` itself which is used by gvfs to discover wsd enabled servers in the network. It does not operate via a service.
 
 Note: The new `wsdd-server` package also installs the `wsdd` package itself which is used by the new `gvfsd-wsdd` backend enabling you to "discover" Windows machines in your network automatically in your Linux file manager.
 
