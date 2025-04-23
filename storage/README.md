@@ -205,6 +205,7 @@ sudo systemctl restart nmbd
 9. Allow samba on firewall if you run into any issues.
 ```
 sudo ufw allow Samba
+sudo ufw status
 ```
 10. Enable discoverability on Windows network
 ```
