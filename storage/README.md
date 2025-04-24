@@ -29,8 +29,7 @@ https://community-scripts.github.io/ProxmoxVE/scripts?id=post-pve-install
 This script provides options for managing Proxmox VE repositories, including disabling the Enterprise Repo, adding or correcting PVE sources, enabling the No-Subscription Repo, adding the test Repo, disabling the subscription nag, updating Proxmox VE, and rebooting the system.
 
 #### Delete local-lvm and Resize local
-My boot drive is small and I run all my containers and virtual machine disks on a seperate storage pool. 
-So the lvm paritiion is not nessesary for me and goes unused. 
+If your boot drive is small and run all containers and virtual machine disks on a seperate storage pool, so the `lvm` paritiion is not nessesary and goes unused. 
 If you're running everything off the same boot drive for fast storage skips this. 
 Also you should check out this [video](https://www.youtube.com/watch?v=czQuRgoBrmM).
 
