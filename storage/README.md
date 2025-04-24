@@ -49,7 +49,7 @@ nano /etc/default/grub
 ```
 You will see the line with `GRUB_CMDLINE_LINUX_DEFAULT="quiet"`, all you need to do is add `intel_iommu=on` or `amd_iommu=on` depending on your system.
 ```
-GRUB_CMDLINE_LINUX_DEFAULT="quiet intel_iommu=on"
+GRUB_CMDLINE_LINUX_DEFAULT="quiet amd_iommu=on"
 ```
 Next run the following commands and reboot your system.
 ```
