@@ -28,7 +28,7 @@ Documentação do servidor homelab rodando Proxmox, inspirado na estrutura do [T
 | Host | IP Local | Função | Detalhes |
 | :--- | :--- | :--- | :--- |
 | **Proxmox Host** | `192.168.1.199` | Hipervisor | Gestão de VMs e ZFS. |
-| **VM 101 (servarr)** | `192.168.1.190` | Docker / Media | 6 Cores, 24GB RAM. Roda a stack Arr. |
+| **VM 101 (servarr)** | `192.168.1.101` | Docker / Media | 6 Cores, 24GB RAM. Roda a stack Arr. |
 | **LXC 100 (media)** | `192.168.1.100` | NAS / Samba | Ponto de montagem de 5.4TB (`tank`). |
 
 ### 🛠️ O que foi feito hoje:

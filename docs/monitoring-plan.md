@@ -3,7 +3,7 @@
 Este documento detalha os passos para configurar a stack de monitoramento (Grafana, Prometheus, InfluxDB) no servidor Proxmox.
 
 ## 📌 Arquitetura Proposta
-- **Central de Monitoramento:** VM 101 (`servarr` - 192.168.1.190).
+- **Central de Monitoramento:** VM 101 (`servarr` - 192.168.1.101).
 - **Banco de Dados:** InfluxDB 2.x (Métricas de Longo Prazo) e Prometheus (Métricas de Sistema).
 - **Visualização:** Grafana.
 
@@ -25,7 +25,7 @@ Criar o arquivo `compose.yaml` com os serviços Grafana, Prometheus e InfluxDB.
 O Proxmox pode enviar dados nativamente para o InfluxDB:
 1. No Proxmox, vá em **Datacenter > Metrics Server**.
 2. Adicione um novo servidor do tipo **InfluxDB**.
-3. Aponte para o IP `192.168.1.190` e porta `8086`.
+3. Aponte para o IP `192.168.1.101` e porta `8086`.
 
 ### 4. Instalação de Agentes (Node Exporters)
 Em cada máquina (Host, VM 101, LXC 100), rodar:
