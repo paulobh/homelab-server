@@ -76,9 +76,9 @@ O acesso externo é feito via Meshnet. Notas de configuração:
 
 **Dispositivos Conectados:**
 - Pixel 9 (`atlas`)
-- Pixel 7 (`everest`)
 - Note (`olympic`)
 - Tablet (`alps`)
+- Projetor (`sierranevada`)
 
 ---
 
