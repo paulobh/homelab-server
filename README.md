@@ -5,6 +5,7 @@ Bem-vindo ao repositório do meu homelab! Aqui organizo as configurações, docu
 ## 🗺️ Navegação
 
 *   **[Audit do Homelab](docs/homelab.md)** - Visão técnica atualizada (IPs, ZFS, VMs).
+*   **[Plano de Monitoramento](docs/monitoring-plan.md)** - Estratégia para Grafana/Prometheus.
 *   **[Setup do Gemini CLI](docs/gemini.md)** - Guia de como configurei este agente no Windows.
 *   **[Media Stack](media/README.md)** - Configuração do Jellyfin e a stack Arr.
 *   **[Storage & Backup](storage/README.md)** - Detalhes sobre ZFS, Samba e Proxmox.
