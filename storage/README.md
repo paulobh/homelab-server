@@ -3,9 +3,10 @@ In this repo I will layout my storage and backup solutions for all of the servic
 Currently, I manage everything with Proxmox and Proxmox Backup Server. 
 While soultions like Unraid and TrueNAS are awesome, I have found over the years the Proxmox is actually an amazing solution for managing storage, network shares, and backups.
 
-## Navigation
-* [Storage](https://github.com/paulobh/homelab-server/tree/main/storage)
-* [Media Server](https://github.com/paulobh/homelab-server/tree/main/media)
+## 🗺️ Navegação
+*   [🏠 Início](../README.md)
+*   [🎬 Media Server](../media/README.md)
+*   [📊 Audit do Homelab](../docs/homelab.md)
 
 ---
 ## Proxmox as a NAS

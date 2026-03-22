@@ -5,9 +5,10 @@ Make sure to review everything here and if you have any issues please submit it 
 Also, checkout the [Servarr Docker Setup](https://wiki.servarr.com/docker-guide) for more details on installing the stack.
 
 
-## Navigation
-* [Storage](https://github.com/paulobh/homelab-server/tree/main/storage)
-* [Media Server](https://github.com/paulobh/homelab-server/tree/main/media)
+## 🗺️ Navegação
+*   [🏠 Início](../README.md)
+*   [📁 Storage](../storage/README.md)
+*   [📊 Audit do Homelab](../docs/homelab.md)
 
 ---
 ## Data Directory

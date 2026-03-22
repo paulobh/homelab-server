@@ -1,23 +1,30 @@
-# homelab-server
-Homelab stacks, templates, and more fun resources! This is a *work in progress*. I still have a ton to update and add.
+# Homelab Server - AOOSTAR WTR PRO
 
-## Navigation
+Bem-vindo ao repositório do meu homelab! Aqui organizo as configurações, documentação e stacks do meu servidor Proxmox.
+
+## 🗺️ Navegação
+
+*   **[Audit do Homelab](docs/homelab.md)** - Visão técnica atualizada (IPs, ZFS, VMs).
+*   **[Setup do Gemini CLI](docs/gemini.md)** - Guia de como configurei este agente no Windows.
+*   **[Media Stack](media/README.md)** - Configuração do Jellyfin e a stack Arr.
+*   **[Storage & Backup](storage/README.md)** - Detalhes sobre ZFS, Samba e Proxmox.
 
 ---
-## Hardware
 
-### Servers and NAS
+## 🛠️ Hardware Principal
 
-#### [AOOSTAR WTR PRO](https://aoostar.com/products/aoostar-wtr-pro-4-bay-90t-storage-amd-ryzen-7-5825u-nas-mini-pc-support-2-5-3-5-hdd-%E5%A4%8D%E5%88%B6?variant=49223254901034) (Proxmox)
-This machine is running our Proxmox Server. Handling our media storage, arr services, proxy, home assistnat, monitoring, and many others.
+### [AOOSTAR WTR PRO](https://aoostar.com/products/aoostar-wtr-pro-4-bay-90t-storage-amd-ryzen-7-5825u-nas-mini-pc) (Proxmox VE)
 
-* AMD Ryzen 7 5825u
-* 32GB x2 16 DDR4-3200 SODIMM
-* 1TB [M.2 2280-NVME](https://a.co/d/g9JLJg1) slot 1 (Boot drive)
-* 1TB [M.2 2280-NVME](https://a.co/d/g9JLJg1) slot 2 (Flash pool)
-* x4 [Seagate IronWolf 8TB NAS Internal Hard Drive HDD](https://a.co/d/3Jc7K6C) (Vault Pool raidz1)
+*   **CPU:** AMD Ryzen 7 5825u
+*   **RAM:** 32GB DDR4-3200
+*   **Boot:** 1TB NVMe (OS Proxmox)
+*   **Pool Flash:** 1TB NVMe (VMs e Containers)
+*   **Pool Tank:** 4x Seagate IronWolf 8TB (RAIDZ1 - Armazenamento de Mídia)
 
-### Networking
+---
 
-#### Other
+## 🚀 Status Atual
+O servidor está operacional com a stack de mídia protegida via VPN (Gluetun) e acesso remoto via NordVPN Meshnet.
 
+---
+*Este repositório é um trabalho em progresso.*
